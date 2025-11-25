@@ -1,0 +1,20 @@
+{
+  "name": "socialsense_ai",
+  "version": "1.0.0",
+  "description": "An app that analyzes uploaded social media content (from PDFs or images) and helps improve engagement.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Santoshkumar2383mandal/SocialSense-AI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Santoshkumar2383mandal/SocialSense-AI/issues"
+  },
+  "homepage": "https://github.com/Santoshkumar2383mandal/SocialSense-AI#readme"
+}
