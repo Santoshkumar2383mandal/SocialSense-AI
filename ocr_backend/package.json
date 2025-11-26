@@ -1,12 +1,24 @@
 {
-  "name": "ocr_backend",
+  "name": "ocr-backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "type": "module",
+  "description": "Minimal Express + Tesseract.js OCR microservice.",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "node --watch server.js"
   },
-  "keywords": [],
+  "keywords": [
+    "ocr",
+    "tesseract",
+    "express"
+  ],
   "author": "",
-  "license": "ISC",
-  "description": ""
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "multer": "^2.0.2",
+    "tesseract.js": "^6.0.1"
+  }
 }
