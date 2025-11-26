@@ -5,6 +5,7 @@
   "description": "Minimal Express + Tesseract.js OCR microservice.",
   "main": "server.js",
   "scripts": {
+    "build": "echo \"Build completed\"",
     "start": "node server.js",
     "dev": "node --watch server.js"
   },

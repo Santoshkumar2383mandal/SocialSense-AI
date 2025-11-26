@@ -2,6 +2,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
+interface PdfParseResult {
+  text: string;
+}
+
+
 export const runtime = "nodejs";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -203,13 +208,14 @@ export async function POST(req: NextRequest) {
     if (isPDF) {
       try {
         // Wrap pdfParse with timeout
-        const pdfData = await withTimeout(
-          pdfParse(buffer),
+        const pdfData = await withTimeout<PdfParseResult>(
+          pdfParse(buffer) as Promise<PdfParseResult>,
           PDF_PARSE_TIMEOUT_MS,
           "PDF processing took too long. Please upload a smaller or simpler document."
         );
-
+        
         extractedText = (pdfData.text || "").trim();
+        
 
         if (!extractedText) {
           return NextResponse.json(

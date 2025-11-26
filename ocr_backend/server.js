@@ -5,9 +5,15 @@ import multer from "multer";
 import Tesseract from "tesseract.js";
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "https://media-morph-ai-fsgf.vercel.app/"
+}));
 
 const upload = multer({ storage: multer.memoryStorage() });
+
+app.get("/", (req, res) => {
+  res.send("OCR Backend is running");
+});
 
 app.post("/ocr", upload.single("file"), async (req, res) => {
   try {
