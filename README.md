@@ -71,6 +71,9 @@ This project is a simple and practical tool that helps users evaluate and improv
 
 ## Project Structure
 
+## Project Structure
+
+```text
 Root/
 ├── src/
 │   ├── app/
@@ -86,6 +89,8 @@ Root/
 ├── scripts/test-tesseract.js      # Smoke test for OCR worker
 ├── README.md
 └── …
+```
+
 
 ## Technologies Used
 
@@ -161,7 +166,7 @@ After deployment:
 - Gemini usage requires a valid API key and counts against your quota
 - Currently supports a single file per analysis
 
-## Approach & Tools (≤200 words)
+## Approach & Tools
 
 My approach was to keep the system simple, fast, and reliable by separating the heavy processing from the main application. All uploads are handled through a single Next.js API route. This route checks the file type, size limit, and validity. PDF files are processed directly using pdf-parse, while images are forwarded to a lightweight OCR backend built with Express, Multer, and Tesseract.js. This split ensures the Next.js app stays responsive and avoids bundling large OCR libraries.
 
